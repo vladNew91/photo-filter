@@ -176,6 +176,14 @@ output {
   --saturate: 100%;
   --hue: 0deg;
 }
+
+.img-container {
+  height: 100%;
+  width: 100%;
+  max-height: 520px;
+  max-width: 830px;
+}
+
 img {
   height: 100%;
   width: 100%;
