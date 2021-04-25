@@ -4,15 +4,18 @@
   box-sizing: border-box;
   user-select: none;
 }
+
 a:focus {
   outline: 0;
 }
+
 body {
   min-height: 100vh;
   background-color: #1e1627;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
+
 .header {
   display: flex;
   flex-direction: row;
@@ -25,15 +28,18 @@ body {
   border-image-slice: 1;
   border-image-source: linear-gradient(to left, #1e1627, #ffffff, #1e1627);
 }
+
 .header-icon {
   width: 50px;
   margin-right: 20px;
 }
+
 .header-title {
   line-height: 60px;
   font-weight: 300;
   color: #fff;
 }
+
 .main {
   min-height: calc(100vh - 110px);
   padding: 58px 10px 0;
@@ -44,6 +50,7 @@ body {
   max-width: 1140px;
   margin: 0 auto;
 }
+
 label:not(.btn) {
   display: block;
   position: relative;
@@ -52,15 +59,19 @@ label:not(.btn) {
   color: #a2abb3;
   font-size: 16px;
 }
+
 label:hover {
   color: #ffffff;
 }
+
 label:hover output {
   color: #a2abb3;
 }
+
 label:active output {
   color: #cbd5de;
 }
+
 input[type='range'] {
   display: block;
   appearance: none;
@@ -73,6 +84,7 @@ input[type='range'] {
   cursor: pointer;
   width: 100%;
 }
+
 input[type='range']::-webkit-slider-thumb {
   appearance: none;
   width: 25px;
@@ -83,9 +95,11 @@ input[type='range']::-webkit-slider-thumb {
   cursor: pointer;
   transition: 0.3s;
 }
+
 label:hover input[type='range']::-webkit-slider-thumb {
   background-color: #4332db;
 }
+
 output {
   position: absolute;
   width: 60px;
@@ -100,18 +114,22 @@ output {
   border-radius: 2px;
   transition: 0.3s;
 }
+
 .btn-container {
   margin-bottom: 20px;
   padding: 2px;
   display: flex;
   justify-content: center;
 }
+
 .btn-container > * {
   margin-right: 10px;
 }
+
 .btn-container > *:last-child {
   margin-right: 0;
 }
+
 .btn {
   flex: 1;
   min-width: 120px;
@@ -128,18 +146,23 @@ output {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .btn:not(.btn-active):hover {
   background-color: #515961;
 }
+
 .btn:active {
   background-color: #4332dbc0;
 }
+
 .btn-active {
   background-color: #4332dbc0;
 }
+
 .btn-active:hover {
   background-color: #4332db;
 }
+
 .btn-load {
   position: relative;
   display: inline-flex;
@@ -147,6 +170,7 @@ output {
   justify-content: center;
   cursor: pointer;
 }
+
 .btn-load--input {
   opacity: 0;
   position: absolute;
@@ -156,12 +180,14 @@ output {
   height: 100%;
   cursor: pointer;
 }
+
 .filters {
   width: 100%;
   max-width: 40%;
   padding-top: 60px;
   margin-bottom: 40px;
 }
+
 .editor {
   display: flex;
   flex-direction: column;
@@ -169,24 +195,20 @@ output {
   width: 100%;
   max-width: 60%;
 }
+
 :root {
   --blur: 0px;
   --invert: 0%;
   --sepia: 0%;
   --saturate: 100%;
   --hue: 0deg;
-}
-
-.img-container {
-  height: 100%;
-  width: 100%;
-  max-height: 520px;
-  max-width: 830px;
+  --imgWidth: 100%;
+  --imgHeight: 100%;
 }
 
 img {
-  height: 100%;
-  width: 100%;
+  height: var(--imgHeight);
+  width: var(--imgWidth);
   max-height: 520px;
   max-width: 830px;
   object-fit: contain;
@@ -194,6 +216,13 @@ img {
     sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
     hue-rotate(var(--hue, 0deg));
 }
+
+canvas {
+  display: contents;
+  width: 1000px;
+  height: 1000px;
+}
+
 .fullscreen {
   position: fixed;
   top: 120px;
@@ -208,9 +237,11 @@ img {
   cursor: pointer;
   background-image: url('assets/svg/fullscreen-open.svg');
 }
+
 .fullscreen:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
+
 :-webkit-full-screen .fullscreen {
   background-image: url('assets/svg/fullscreen-exit.svg');
 }
@@ -219,32 +250,40 @@ img {
   .main {
     padding-top: 40px;
   }
+
   label:not(.btn) {
     margin-bottom: 35px;
     margin-right: 80px;
   }
+
   .btn {
     min-width: 45%;
     border-radius: 2px;
   }
+
   .btn-container {
     flex-wrap: wrap;
     margin-left: -10px;
     margin-right: -10px;
   }
+
   .btn-container > *:last-child {
     margin-right: 10px;
   }
+
   .btn-container > * {
     margin: 10px;
   }
+
   .main {
     flex-wrap: wrap;
   }
+
   .filters,
   .editor {
     max-width: 100%;
   }
+
   .fullscreen {
     top: 70px;
     right: 20px;
@@ -252,13 +291,16 @@ img {
     height: 40px;
   }
 }
+
 @media (max-width: 375px) {
   .btn {
     min-width: 145px;
   }
+
   .btn-container > *:last-child {
     margin-right: 3px;
   }
+
   .btn-container > * {
     margin: 3px;
   }
